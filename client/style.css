@@ -1,0 +1,56 @@
+#board {
+  width: 40em;
+  height: 40em;
+  background-color: #8B4513;
+  border: 0.5em solid black;
+}
+#log_field {
+  width: 40em;
+  height: 10em;
+  border: 0.5em solid black;
+  border-top: 0em;
+  background-color: #F2DDC6;
+  overflow: scroll;
+}
+.just_square {
+  height: 2em;
+  width: 2em;
+  float: left;
+  background-color: #8B4513;
+}
+.letter_squares {
+  height: 2em;
+  width: 5em;
+  border-bottom: 0.2em solid black;
+  float: left;
+  background-color: #8B4513;
+  text-align: center;
+}
+
+.number_squares {
+  height: 5em;
+  width: 1.8em;
+  border-right: 0.2em solid black;
+  float: left;
+  background-color: #8B4513;
+  text-align: center;
+}
+
+.white_squares {
+  height: 5em;
+  width: 5em;
+  background-color: #EDD19C;
+  float: left;
+}
+
+.black_squares {
+  height: 5em;
+  width: 5em;
+  background-color: #B87333;
+  float: left;
+}
+
+img {
+  width:100%;
+  height:100%;
+}
