@@ -19,11 +19,9 @@ var checkRoque = function(king_cell, castle_cell){
   var current_x = king_cell.x;
   var current_y = king_cell.y;
   if ((king_cell.figure === null)||(king_cell.figure.type !== KING)){
-    log ("NOT KING CELL");
     return false;
   }
   if ((castle_cell.figure === null)||(castle_cell.figure.type !== CASTLE)){
-    log ("NOT CASTLE CELL");
     return false;
   }
   if (castle_cell.x === 0){
@@ -37,18 +35,13 @@ var checkRoque = function(king_cell, castle_cell){
       }
       current_x--;
     }
-    log ("NO FIGURES ARE IN WAY");
     current_x = king_cell.x;
     for (var i = 0; i < 3; ++i){
       if (checkCellForCheck(king_cell.figure.owner,field[current_y][current_x - i])){
-        log ("CELL IN DANGER");
-        log (field[current_y][current_x - i]);
         return false;
       }
-      log ("CELL NOT IN DANGER");
-      log (field[current_y][current_x - i])
     }
-    log ("NO CELLS ARE IN DANGER");
+    console.log("roque allowed");
     return true;
   }
 
@@ -63,7 +56,6 @@ var checkRoque = function(king_cell, castle_cell){
       }
       current_x++;
     }
-    log ("NO FIGURES ARE IN WAY");
     current_x = king_cell.x;
     for (var i = 0; i < 3; ++i){
       if (checkCellForCheck(king_cell.figure.owner,field[current_y][current_x + i])){
@@ -71,10 +63,8 @@ var checkRoque = function(king_cell, castle_cell){
         log (field[current_y][current_x + i]);
         return false;
       }
-      log ("CELL NOT IN DANGER");
-      log (field[current_y][current_x + i])
     }
-    log ("NO CELLS ARE IN DANGER");
+    console.log("roque allowed");
     return true;
   }
   log ("ROQUE WAS FORBIDDEN");

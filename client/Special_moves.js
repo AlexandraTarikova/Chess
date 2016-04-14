@@ -22,12 +22,19 @@ var dummyMove = function (cell_from, cell_to){
   cell_from.figure = null;
 };
 
-var promotePawn = function (cell){
-  //дописать выбор из разных фигур
-  var choice = "";
-  while (((+choice) !== KNIGHT) && ((+choice) !== BISHOP) && ((+choice) !== CASTLE) && ((+choice) !== QUEEN)){
-    choice = prompt ("Choose type: 1 - knight, 2 - bishop, 3 - castle, 4 - queen");
+var promotePawn = function (cell, choice){
+  if (choice === "knight"){
+    choice = 1;
   }
-  cell.figure.type = (+choice);
+  else if (choice === "rook"){
+    choice = 3;
+  }
+  else if (choice === "bishop"){
+    choice = 2;
+  }
+  else {
+    choice = 4;
+  }
+  cell.figure.type = choice;
   updatePicture(cell);
 }

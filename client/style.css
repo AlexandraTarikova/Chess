@@ -1,41 +1,31 @@
+#wrapper {
+  width: 60em;
+  height: 1.1em;
+}
+
+#room_id {
+  width: 20.5em;
+  height: 1.1em;
+  float: left;
+  font-size : 2em;
+  text-align: left;
+  letter-spacing: 3px;
+}
 #board {
   width: 40em;
   height: 40em;
-  background-color: #8B4513;
-  border: 0.5em solid black;
+  float:left;
 }
-#log_field {
-  width: 40em;
-  height: 10em;
-  border: 0.5em solid black;
-  border-top: 0em;
-  background-color: #F2DDC6;
-  overflow: scroll;
-}
-.just_square {
-  height: 2em;
+#exit {
+  float: left;
   width: 2em;
-  float: left;
-  background-color: #8B4513;
-}
-.letter_squares {
   height: 2em;
-  width: 5em;
-  border-bottom: 0.2em solid black;
-  float: left;
-  background-color: #8B4513;
-  text-align: center;
 }
-
-.number_squares {
-  height: 5em;
-  width: 1.8em;
-  border-right: 0.2em solid black;
+#observe {
   float: left;
-  background-color: #8B4513;
-  text-align: center;
+  width: 3em;
+  height: 3em;
 }
-
 .white_squares {
   height: 5em;
   width: 5em;
@@ -50,7 +40,40 @@
   float: left;
 }
 
+.popup{
+    width:100%;
+    height: 100%;
+    overflow:hidden;
+    position:fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.menu{
+    width:8em;
+    height: 4em;
+    padding: 10px;
+    background-color: #c8c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+.button{
+  width: 4em;
+  height: 4em;
+  float: left;
+}
+
 img {
   width:100%;
   height:100%;
+}
+
+div {
+    -webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none;
 }
