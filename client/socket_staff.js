@@ -1,3 +1,14 @@
+var startObserving = function(id){
+  observer_popup.hide();
+  var info = {};
+  info.roomID = id;
+  i_am_observer = true;
+  cleanField(id);
+  my_color = null;
+  console.log ("emit room_enter, id: " + id);
+  socket.emit('room_enter', info);
+};
+
 
 var bindSocketEvents = function(){
   socket.on('game_found', function (data){
@@ -7,6 +18,7 @@ var bindSocketEvents = function(){
     console.log (data);
     my_color = (data.color === 'white') ? WHITE : BLACK;
     console.log ("Let the game begin! Start drawing board...");
+    i_am_observer = false;
     cleanField(data.roomID);
   });
 
@@ -38,9 +50,34 @@ var bindSocketEvents = function(){
   });
 
   socket.on('game_end', function (data){
-    alert ("Game Over! Reason: " + data.msg + ", winner: " + (data.winnerColor === null ? "no" : data.winnerColor));
-    menu_popup.show();
+    //alert ("Game Over! Reason: " + data.msg + ", winner: " + (data.winnerColor === null ? "no" : data.winnerColor));
+    //menu_popup.show();
+    console.log("GAME OVER");
+    drawGameEnd(data);
+    game_over_popup.show();
   });
+
+  socket.on('roomList', function(data){
+    console.log('getting roomList!');
+    console.log(data);
+    drawObserver(data);
+    observer_popup.show();
+  });
+
+  socket.on('get_logs', function(data){
+    console.log("getting logs");
+    var l = data.length;
+    for (var i = 0; i < l; ++i){
+      console.log("data[i]: ");
+      console.log(data[i]);
+      var info = {};
+      info.from = data[i].from;
+      info.to = data[i].to;
+      info.playerColor = data[i].playerColor;
+      playerMove(info, data[i].moveType);
+    }
+  });
+
 };
 
 var convertXtoNum = function (letter){
@@ -78,7 +115,7 @@ var playerMove = function (move_info, type){
   console.log("checking enemy move. Move type = " + type + ", move_info = ");
   log (move_info.from);
   log (move_info.to);
-  if ((active_player !== (1 - my_color)) || (! checkMove(field[move_info.from.y][move_info.from.x],field[move_info.to.y][move_info.to.x]))){
+  if ((!i_am_observer)&&((active_player !== (1 - my_color)) || (! checkMove(field[move_info.from.y][move_info.from.x],field[move_info.to.y][move_info.to.x])))){
     console.log("emit 'turnValidation_invalid' " + active_player + " " + my_color);
     console.log("from: ");
     socket.emit('turnValidation_invalid');

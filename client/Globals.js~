@@ -1,4 +1,5 @@
-var socket = io('http://185.81.113.164:3056');
+var socket = io('http://localhost:3056');
+//var socket = io('http://194.85.204.32:3056');
 
 var PAWN = 0;
 var KNIGHT = 1;
@@ -15,9 +16,18 @@ var active_player = WHITE;
 var roque = [];
 var my_color = WHITE;
 var i_am_observer = false;
-var move_valid = true;
+var new_figure;
+var promote_cell;
+var promotion_info;
+var cheat_mode = false;
 roque[WHITE] = [true, true]; //[long_roque, short_roque]
 roque[BLACK] = [true, true]; //[long_roque, short_roque]
+
+var menu_popup;
+var promotion_popup;
+var leave_queue_popup;
+var game_over_popup;
+var observer_popup;
 
 
 var log = function (a){

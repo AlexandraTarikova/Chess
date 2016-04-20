@@ -114,7 +114,6 @@ var cleanField = function(roomID){
   enpassantable_cell = null;
   active_player = WHITE;
   roque = [];
-  i_am_observer = false;
   new_figure = "queen";
   roque[WHITE] = [true, true]; //[long_roque, short_roque]
   roque[BLACK] = [true, true]; //[long_roque, short_roque]
@@ -166,6 +165,9 @@ var cleanField = function(roomID){
   $('#exit').click (function(){
     console.log("emit 'room_leave'")
     socket.emit('room_leave');
+    if (i_am_observer){
+      menu_popup.show();
+    }
     return;
   });
   //$("#popup1").show();

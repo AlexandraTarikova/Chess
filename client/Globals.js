@@ -1,4 +1,5 @@
-var socket = io('http://185.81.113.164:3056');
+var socket = io('http://localhost:3056');
+//var socket = io('http://10.254.23.79:3056');
 
 var PAWN = 0;
 var KNIGHT = 1;
@@ -26,6 +27,7 @@ var menu_popup;
 var promotion_popup;
 var leave_queue_popup;
 var game_over_popup;
+var observer_popup;
 
 
 var log = function (a){
