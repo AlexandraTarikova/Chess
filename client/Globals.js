@@ -1,3 +1,5 @@
+var socket = io('http://185.81.113.164:3056');
+
 var PAWN = 0;
 var KNIGHT = 1;
 var BISHOP = 2;
@@ -11,8 +13,19 @@ var remembered_cell = null;
 var enpassantable_cell = null;
 var active_player = WHITE;
 var roque = [];
+var my_color = WHITE;
+var i_am_observer = false;
+var new_figure;
+var promote_cell;
+var promotion_info;
+var cheat_mode = false;
 roque[WHITE] = [true, true]; //[long_roque, short_roque]
 roque[BLACK] = [true, true]; //[long_roque, short_roque]
+
+var menu_popup;
+var promotion_popup;
+var leave_queue_popup;
+var game_over_popup;
 
 
 var log = function (a){
