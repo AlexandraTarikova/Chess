@@ -98,9 +98,10 @@ ECMAScript 6
 }
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| %  | +  | %  | +  | - |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ %  | +  | %  | +  | - 
 # 4. Arrow Functions
 # Expression Bodies
 ECMAScript 5 
@@ -117,9 +118,10 @@ pairs = evens.map(v => ({ even: v, odd: v + 1 }))
 nums  = evens.map((v, i) => v + i)
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| -  | +  | +  | +  | -  |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ -  | +  | +  | +  | -  
 # Statement Bodies
 
 ECMAScript 5 
@@ -138,9 +140,11 @@ nums.forEach(v => {
 })
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| -  | +  | +  |  + |  - |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ -  | +  | +  |  + |  - 
+
 # Lexical this
 ECMAScript 5 
 ```
@@ -159,9 +163,11 @@ this.nums.forEach((v) => {
 })
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-|  - | +  |  + | + | -  |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ - | +  |  + | + | -  
+
 # 5. Extended Parameter Handling
 # Default Parameter Values
 ECMAScript 5 
@@ -184,9 +190,11 @@ function f (x, y = 7, z = 42) {
 f(1) === 50
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| -  |  + | %  | +  |  - |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ -  |  + | %  | +  |  - 
+
 # Rest Parameter
 ECMAScript 5 
 ```
@@ -205,9 +213,11 @@ function f (x, y, ...a) {
 f(1, 2, "hello", true, 7) === 9
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-|  - |  + | +  |  + |  - |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+  - |  + | +  |  + |  - 
+
 # Spread Operator
 ECMAScript 5 
 ```
@@ -229,9 +239,11 @@ var str = "foo"
 var chars = [ ...str ] // [ "f", "o", "o" ]
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| -  |  + |  + | +  |  % |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ -  |  + |  + | +  |  % 
+
 # 6. Iterators
 # Iterator & For-Of Operator
 Support "iterable" protocol to allow objects to customize their iteration behaviour. Additionally, support "iterator" protocol to produce sequence of values (either finite or infinite). Finally, provide convenient of operator to iterate over all values of an iterable object.
@@ -281,8 +293,9 @@ for (let n of fibonacci) {
 ```
 Compatibility
 |IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
+:---:|:---:|:---:|:---:|:---:
 | -  |%  | %  | +  | %  |
+
 # 7. Classes
 # Class Definition
 ECMAScript 5 
@@ -311,9 +324,11 @@ class Shape {
 }
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-|  - |  + | +  | +  |  + |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+  - |  + | +  | +  |  + 
+
 # Class Inheritance
 ECMAScript 5 
 ```
@@ -349,9 +364,11 @@ class Circle extends Shape {
 }
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-|  - | +  | +  |  + |  + |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+  - | +  | +  |  + |  + 
+
 # Static Members
 ECMAScript 5 
 ```
@@ -389,9 +406,11 @@ var defRectangle = Rectangle.defaultRectangle()
 var defCircle    = Circle.defaultCircle()
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| -  |  + |  + |  + |  + |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ -  |  + |  + |  + |  + 
+
 # Getter/Setter
 ECMAScript 5 
 ```
@@ -427,6 +446,7 @@ var r = new Rectangle(50, 20)
 r.area === 1000
 ```
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| -  | +  | +  | +  |  + |
+
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+ -  | +  | +  | +  |  + 
