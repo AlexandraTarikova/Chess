@@ -66,8 +66,8 @@ callbacks[2]() === 4
 ```
 Compatibility
 |IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-| %  | +  | %  | +  | - |
+|-----|-----------------|----------|---------------------------|--------|
+|  %  |        +        |    %     |             +             |    -   |
 # 3. Block-Scoped Functions
 ECMAScript 5 
 ```
