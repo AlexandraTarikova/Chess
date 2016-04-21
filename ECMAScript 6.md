@@ -18,9 +18,9 @@ PI > 3.0
 ```
 
 Compatibility
-|IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9|
-|---|---|---|---|---|
-|  % | +  |  % |  + |  % |
+IE 11|Microsoft Edge 14|Firefox 48|Google Chrome 52 / Opera 39|Safari 9
+:---:|:---:|:---:|:---:|:---:
+  % | +  |  % |  + |  % 
 
 # 2. Block-Scoped Variables
 ECMAScript 5 
